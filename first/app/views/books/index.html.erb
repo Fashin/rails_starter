@@ -1,0 +1,12 @@
+<h1>Books#index</h1>
+
+  <h2>Liste des livres</h2>
+
+    <% @les_livres.each do |un_livre| %>
+      <p><a href="/books/<%= un_livre.id %>"><%= un_livre.title %></a></p>
+    <% end %>
+
+<%= form_tag "/books", method: "post" do %>
+  <input type="text" name="title">
+  <input type="submit" value="Ajouté le livre">
+<% end %>
